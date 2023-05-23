@@ -2,12 +2,23 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import ActionButton from "@/shared/ActionButton";
 import HomePageText from "@/assets/HomePageText.png";
+import Logo from "@/assets/logoFcsFest.svg";
+
 import HomePageGraphic from "@/assets/HomePageGraphic.png";
+import FcsFestPoster from "@/assets/FcsFestPoster.jpg";
 import SponsoRedBull from "@/assets/SponsorRedBull.png";
 import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
+import AdidasLogo from "@/assets/AdidasLogo.svg";
+
+import CaptainMorganLogo from "@/assets/CaptainMorganLogo.png";
+import CaptainMorganText from "@/assets/CaptainMorganText.png";
+import CaptainMorganLogoText from "@/assets/CaptainMorganLogoText.png";
+import RinceCochonLogo from "@/assets/RinceCochonLogo.png";
+
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import HText from "@/shared/HText";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -16,7 +27,7 @@ type Props = {
 const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   return (
-    <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
+    <section id="home" className="gap-16 bg-gray-500 py-10 md:h-full md:pb-0">
       {/* IMAGE AND MAIN HEADER*/}
       <motion.div
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
@@ -38,7 +49,7 @@ const Home = ({ setSelectedPage }: Props) => {
           >
             <div className="relative">
               <div className="before:absolute before:-left-20 before:-top-20 before:z-[-1] md:before:content-evolvetext">
-                <img alt="home-page-text" src={HomePageText} />
+                <img alt="logo" src={Logo} />{" "}
               </div>
             </div>
             <p className="mt-8 text-sm">
@@ -72,18 +83,32 @@ const Home = ({ setSelectedPage }: Props) => {
           </motion.div>
         </div>
         {/* IMAGE*/}
-        <div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end ">
+        <div className="basis-/5 flex justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end ">
           <img alt="home-page-graphic" src={HomePageGraphic}></img>
         </div>
       </motion.div>
       {/* Sponsors*/}
       {isAboveMediumScreens && (
-        <div className="h-[150px] w-full bg-primary-100 py-10">
+        <div className="h-[150px] w-full bg-gray-20 py-10">
           <div className="mx-auto w-5/6">
             <div className="flex w-3/6 items-center justify-between gap-8">
-              <img alt="redBull-sponsor" src={SponsoRedBull}></img>
-              <img alt="forbes-sponsor" src={SponsorForbes}></img>
-              <img alt="fortune-sponsor" src={SponsorFortune}></img>
+              <a href="https://www.larincecochon.com/" target="_blank">
+                <img
+                  className="w-[100px]"
+                  alt="redBull-sponsor"
+                  src={AdidasLogo}
+                />
+              </a>
+              <img
+                className="w-[100px]"
+                alt="forbes-sponsor"
+                src={CaptainMorganLogo}
+              ></img>
+              <img
+                className="w-[100px]"
+                alt="forbes-sponsor"
+                src={RinceCochonLogo}
+              ></img>
             </div>
           </div>
         </div>
