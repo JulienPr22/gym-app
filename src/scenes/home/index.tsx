@@ -9,7 +9,7 @@ import FcsFestPoster from "@/assets/FcsFestPoster.jpg";
 import SponsoRedBull from "@/assets/SponsorRedBull.png";
 import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
-import AdidasLogo from "@/assets/AdidasLogo.svg";
+import AdidasLogo from "@/assets/AdidasLogo.png";
 
 import CaptainMorganLogo from "@/assets/CaptainMorganLogo.png";
 import CaptainMorganText from "@/assets/CaptainMorganText.png";
@@ -27,7 +27,10 @@ type Props = {
 const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   return (
-    <section id="home" className="gap-16 bg-gray-500 py-10 md:h-full md:pb-0">
+    <section
+      id="home"
+      className="gap-16 bg-gray-500 py-10 md:mt-20 md:h-full md:pb-0"
+    >
       {/* IMAGE AND MAIN HEADER*/}
       <motion.div
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
@@ -89,26 +92,24 @@ const Home = ({ setSelectedPage }: Props) => {
       </motion.div>
       {/* Sponsors*/}
       {isAboveMediumScreens && (
-        <div className="h-[150px] w-full bg-gray-20 py-10">
+        <div className="h-[150px] w-full bg-gray-20">
           <div className="mx-auto w-5/6">
-            <div className="flex w-3/6 items-center justify-between gap-8">
-              <a href="https://www.larincecochon.com/" target="_blank">
-                <img
-                  className="w-[100px]"
-                  alt="redBull-sponsor"
-                  src={AdidasLogo}
-                />
-              </a>
+            <div className="flex w-3/6 items-center justify-between gap-16">
               <img
-                className="w-[100px]"
+                className="max-h-32"
+                alt="redBull-sponsor"
+                src={AdidasLogo}
+              />
+              <img
+                className="max-h-28"
                 alt="forbes-sponsor"
                 src={CaptainMorganLogo}
-              ></img>
+              />
               <img
-                className="w-[100px]"
+                className="max-h-32"
                 alt="forbes-sponsor"
                 src={RinceCochonLogo}
-              ></img>
+              />
             </div>
           </div>
         </div>
