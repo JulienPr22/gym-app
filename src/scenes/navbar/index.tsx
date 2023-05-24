@@ -33,29 +33,29 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {/* RIGHT SIDE */}
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
-                <div className={`${flexBetween} gap-8 text-sm text-white`}>
+                <div className={`${flexBetween} gap-8 text-sm text-gray-10`}>
                   <Link
-                    page="Home"
+                    page="Accueil"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Benefits"
+                    page="Programmation"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Our Classes"
+                    page="Activités"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Contact Us"
+                    page="Contactes"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                 </div>
-                <div className={`${flexBetween} gap-8`}>
+                <div className={`${flexBetween} gap-8 text-gray-10`}>
                   <p>Sign In</p>
                   <ActionButton setSelectedPage={setSelectedPage}>
                     Become a Member
@@ -80,7 +80,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <XMarkIcon className="h-6 w-6 text-gray-400" />
+              <XMarkIcon className="h-6 w-6 text-gray-10" />
             </button>
           </div>
 

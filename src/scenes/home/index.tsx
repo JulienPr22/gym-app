@@ -1,24 +1,13 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import ActionButton from "@/shared/ActionButton";
-import HomePageText from "@/assets/HomePageText.png";
 import Logo from "@/assets/logoFcsFest.svg";
-
-import HomePageGraphic from "@/assets/HomePageGraphic.png";
-import FcsFestPoster from "@/assets/FcsFestPoster.jpg";
-import SponsoRedBull from "@/assets/SponsorRedBull.png";
-import SponsorForbes from "@/assets/SponsorForbes.png";
-import SponsorFortune from "@/assets/SponsorFortune.png";
 import AdidasLogo from "@/assets/AdidasLogo.png";
-
 import CaptainMorganLogo from "@/assets/CaptainMorganLogo.png";
-import CaptainMorganText from "@/assets/CaptainMorganText.png";
-import CaptainMorganLogoText from "@/assets/CaptainMorganLogoText.png";
 import RinceCochonLogo from "@/assets/RinceCochonLogo.png";
-
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
-import HText from "@/shared/HText";
+import Countdown from "./CountDown";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -26,6 +15,8 @@ type Props = {
 
 const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const targetDate = new Date("2023-07-28T00:00:00");
+
   return (
     <section
       id="home"
@@ -33,7 +24,7 @@ const Home = ({ setSelectedPage }: Props) => {
     >
       {/* IMAGE AND MAIN HEADER*/}
       <motion.div
-        className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
+        className=" w-5/6 items-center justify-center md:flex md:h-5/6"
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
       >
         {/* MAIN HEADER*/}
@@ -55,11 +46,6 @@ const Home = ({ setSelectedPage }: Props) => {
                 <img alt="logo" src={Logo} />{" "}
               </div>
             </div>
-            <p className="mt-8 text-sm">
-              Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
-              Studios to get the Body Shapes That you Dream of.. Get Your Dream
-              Body Now.
-            </p>{" "}
           </motion.div>
           {/* Actions*/}
           <motion.div
@@ -77,7 +63,7 @@ const Home = ({ setSelectedPage }: Props) => {
               Join Now
             </ActionButton>
             <AnchorLink
-              className="unserline hover:text-secondary-color-500 text-sm font-bold text-primary-500"
+              className="unserline hover:text-secondary-color-500 text-sm font-bold text-gray-10"
               onClick={() => setSelectedPage(SelectedPage.ContactUs)}
               href={`#${SelectedPage.ContactUs}`}
             >
@@ -87,15 +73,20 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
         {/* IMAGE*/}
         <div className="basis-/5 flex justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end ">
-          <img alt="home-page-graphic" src={HomePageGraphic}></img>
+          <Countdown targetDate={targetDate}></Countdown>
+
+          {/* <img alt="home-page-graphic" src={HomePageGraphic}></img> */}
         </div>
       </motion.div>
       {/* Sponsors*/}
       {isAboveMediumScreens && (
-        <div className="h-[150px] w-full bg-gray-20">
-          <div className="mx-auto w-5/6">
+        <div className="h-[160px] w-full bg-gray-20">
+          <div className="mx-auto mt-5 w-5/6">
             <div className="flex w-3/6 items-center justify-between gap-16">
               <img
+                onClick={() => {
+                  window.location.href = "https://www.larincecochon.com/"; // Remplacez l'URL par celle que vous souhaitez rediriger
+                }}
                 className="max-h-32"
                 alt="redBull-sponsor"
                 src={AdidasLogo}

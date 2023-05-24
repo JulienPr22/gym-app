@@ -1,5 +1,5 @@
 import { SelectedPage, ClassType } from "@/shared/types";
-import image1 from "@/assets/image1.png";
+import image1 from "@/assets/TeeFcsFest.jpg";
 import image2 from "@/assets/image2.png";
 import image3 from "@/assets/image3.png";
 import image4 from "@/assets/image4.png";

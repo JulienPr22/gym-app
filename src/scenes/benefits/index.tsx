@@ -2,33 +2,30 @@ import { BenefitType, SelectedPage } from "@/shared/types";
 import {
   HomeModernIcon,
   UserGroupIcon,
+  TicketIcon,
   AcademicCapIcon,
 } from "@heroicons/react/24/solid";
+import TShirtIcon from "@/asset/Tshirt.svg";
 import { motion } from "framer-motion";
 import HText from "@/shared/HText";
 import Benefit from "./Benefit";
 import ActionButton from "@/shared/ActionButton";
+import TeeFcsFest from "@/assets/TeeFcsFest.jpg";
 
 import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 
 const benefits: Array<BenefitType> = [
   {
-    icon: <HomeModernIcon className="h-6 w-6" />,
-    title: "State of the Art Facilities",
+    icon: <TicketIcon className="h-6 w-6" />,
+    title: "Entrée Simple",
     description:
       "Neque adipiscing amet amet enim. Feugiat dolor enim fermentum in a in lectus pellentesque. Ullamcorper et.",
   },
   {
     icon: <UserGroupIcon className="h-6 w-6" />,
-    title: "100's of Diverse Classes",
+    title: "Entrée T-shirt",
     description:
       "Eu ipsum id egestas risus tempus enim semper felis quis. Nec consectetur ac venenatis facilisi est. Eget ac turpis id.",
-  },
-  {
-    icon: <AcademicCapIcon className="h-6 w-6" />,
-    title: "Expert and Pro Trainers",
-    description:
-      "Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.",
   },
 ];
 
@@ -47,7 +44,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
   return (
     <section
       id="benefits"
-      className="mx-auto min-h-full bg-gray-500 px-5 py-20"
+      className="mx-auto min-h-full bg-primary-300 px-5 py-20 text-gray-10"
     >
       <div>
         <motion.div
@@ -66,7 +63,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
             }}
           >
             <div className="md:w-3/5">
-              <HText>MORE THAN JUST A GYM</HText>
+              <HText>OFFRES</HText>
               <p className="my-5 text-sm">
                 We provide world class fitness equipment, trainers and classes
                 to get you to your ultimate fitness goals with ease. We provide
@@ -96,9 +93,9 @@ const Benefits = ({ setSelectedPage }: Props) => {
           <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
             {/* GRAPHICS  */}
             <img
-              className="mx-auto"
+              className="mx-auto max-h-96"
               alt="benefits-page-graphic"
-              src={BenefitsPageGraphic}
+              src={TeeFcsFest}
             />
 
             {/* DESCRIPTION  */}
@@ -117,8 +114,8 @@ const Benefits = ({ setSelectedPage }: Props) => {
                     }}
                   >
                     <HText>
-                      MILLIONS OF HAPPY MEMBERS GETTING{" "}
-                      <span className="text-primary-500">FIT</span>
+                      T-SHIRT <span className="text-primary-500">FCS FEST</span>{" "}
+                      1ère édition
                     </HText>
                   </motion.div>
                 </div>
